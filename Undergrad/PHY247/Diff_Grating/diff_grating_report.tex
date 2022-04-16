@@ -1,0 +1,71 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{physics}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{top=0cm, margin=1.5cm}
+\begin{document}
+	\author{Aayush Arya}
+	\title{Measuring wavelength of light in mercury spectrum}
+	\maketitle
+	
+	\hrule
+	\begin{center}
+		PHY247 Lab Report\\
+		Registration Number: 11912610 \quad Section: G2903
+	\end{center}
+	\hrule
+	
+	\section*{Measurements \& Calculations}
+	
+	The grating and vernier tables were adjusted such that the zero points of $V1$ and $V2$ were $45^o$ and $135^o$ respectively.
+	
+	The positions of the first order spectral lines of mercury were recorded to be the following.
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			Color & \multicolumn{4}{|c|}{Right}	&	\multicolumn{4}{|c|}{Left}	& Mean ($\theta$)\\
+			\hline
+			& \multicolumn{2}{|c|}{V1}  &  \multicolumn{2}{|c|}{V2} & \multicolumn{2}{|c|}{V1} & \multicolumn{2}{|c|}{V2} & \\
+			\hline
+			 & MSR & CSR & MSR & CSR & MSR & CSR & MSR & CSR & \\
+			\hline
+			Violet &	59&	2&	149&	0&	30.5&	28&	120.5&	26& 14.03\\
+			Indigo &	60&	4&	150&	2&	29.5&	28&	119.5&	26& 15.05\\
+			Blue &	62&	4&	152&	2&	27.5&	29&	117.5&	28& 17.08\\
+			Green &	64&	12&	154&	10&	25.5&	18&	115.5&	17& 19.20\\
+			Yellow&	65&	14&	155&	12&	24.5&	04&	114.5&	03& 20.33\\
+			\hline
+		\end{tabular}
+		\caption{Angular positions of certain spectral lines of the mercury lamp.}
+	\end{table}
+	
+	\section*{Results}
+The wavelength of the green line at $541.9$ nm was used to estimate the line density $N$ (or equivalently, the grating constant $d$). The grating equation $$ d\sin\theta = m\lambda$$ for first order ($m=1$) provides a grating constant of $$ d = 1.66 \times 10^{-6} m$$
+which is consistent with $N = 600$ lines mm$^{-1}$
+	
+	Adopting that value of $N$ we found the following wavelength estimates
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|c|c|}
+			\hline
+			Color & Wavelength (\AA)\\
+			\hline
+			Violet & 4041.4 \\
+			Indigo & 4327.7\\
+			Blue & 4883.3\\
+			Green & 5479.9\\
+			Yellow & 5790.2\\
+			\hline
+		\end{tabular}
+		\caption{Wavelength estimates of the mercury spectral lines from first-order diffraction.}
+	\end{table}
+	
+	We notice how the green line measured to be $547.99$ nm is off the true value of $546.1$ nm by only $0.34\%$ 
+\end{document}

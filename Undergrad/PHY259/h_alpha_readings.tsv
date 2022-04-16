@@ -1,0 +1,4 @@
+# Vernier scale has 30 divisions -> 2 minutes per division (if I understand correctly).
+Position	V1 MSR	V1 VSR	V2 MSR	V2 VSR	Diff
+Left	336	18	156	18	180
+Right	23	14	203	14	180

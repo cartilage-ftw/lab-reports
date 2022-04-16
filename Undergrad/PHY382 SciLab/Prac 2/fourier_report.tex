@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\urlstyle{same}
+\begin{document}
+	
+	\author{Aayush Arya}
+	\date{(Submitted: \today)}
+	\title{}
+	
+	\maketitle
+	
+	\hrule
+	\begin{center}
+		PHY382 Lab Report\\
+		Practical: 2 \quad Registration No.: 11912610 \quad Section: G2903
+	\end{center}
+	\hrule
+	
+	\section*{Introduction}
+	In almost all of physics, sometimes it's very convenient to expand a non-trivial function into a series of more convenient terms. For instance, the Taylor expansion of inverse trigonometric functions (e.g. $\arctan$) can often provide useful approximations. However, there happens to be a series expansion technique that can be used to decompose a periodic function into its constituent frequencies. This technique of {\it Fourier series} expansion is the subject of the rest of this report.
+	
+	\section*{Fourier Series}
+	One remarkable insight offered by the French mathematician Joseph Fourier was this: A function $f(x)$ that is periodic in a finite interval, say $[0, L]$, can be written in terms of a series of harmonic functions. That is to say, a well behaved $f(x)$ can be expanded as
+	
+	$$ f(x) = \frac{a_0}{2} + \sum_{r=1}^{\infty} \left(a_r \sin \frac{2r\pi x}{L} + b_r \cos \frac{2r\pi x}{L} \right) = \sum_{r=-\infty}^{\infty} c_r e^{2ri\pi x/L}$$
+	
+	where each term represents a harmonic of a given frequency, whose amplitude is determined by the constant coefficients. For a physicist, this means that given a periodic disturbance that is  a complicated function of time, one decompose that function as a superposition of discrete, single frequencies that make up the whole signal/disturbance.\\
+	
+	In a strict mathematical sense, while writing a Fourier series, one is taking an orthonormal basis formed by $\{e^{2ni\pi x/L} \hspace{2pt} | \hspace{2pt} n\in \mathbb{Z}\}$\footnote{Or in terms of $\sin$ and $\cos$ functions.} which spans the vector space of square summable functions $L^2$ (say) and the coordinates of an $f(x)$ expanded in this basis will be the amplitudes of the harmonics.\\
+	
+	It's easy to see how the basis vectors are orthogonal, since over a full period, the inner product over this space $L^2[0,L]$ defined by $$ \langle f, g\rangle = \frac{1}{L} \int_0^L f^*(x) g(x) dx$$
+	
+	for some $f = e^{2in\pi x/L}$ and $g=e^{2im\pi x/L}$, turns out to be zero
+	
+	$$ \frac{1}{L}\int_{0}^{L} e^{-2in\pi x/L}e^{2im\pi x/L} dx = \frac{1}{L} \int_0^L e^{2i\pi(m-n)x/L} dx = \delta_{mn}$$
+	
+	where $\delta_{mn} = 0$ if $m \neq n$. Therefore, in a Fourier series, each frequency term is independent of any other.
+	
+	\section*{Applications}
+	Problems in physics involving differential equations (e.g. the heat equation or the diffusion equation) that don't have a closed form solution, may be expanded in terms of a Fourier series. In signal processing problems, one can break down an arbitrary waveform into discrete frequencies using a Fourier series expansion.\\
+	
+	Fourier methods are also used in adaptive optics used in astronomy.
+	
+	
+\end{document}

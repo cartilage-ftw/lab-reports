@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{amsthm}
+% for defining definitions
+\newtheorem{defn}{Definition}
+
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\urlstyle{same}
+\begin{document}
+	
+	\author{Aayush Arya}
+	\date{(Submitted: \today)}
+	\title{}
+	
+	\maketitle
+	
+	\hrule
+	\begin{center}
+		PHY382 Lab Report\\
+		Practical(s): 6 \& 7 \quad Registration No.: 11912610 \quad Section: G2903
+	\end{center}
+	\hrule
+	
+	\section*{Laplace Transforms}
+	There are functions $f(t)$ for which a Fourier transform is not always possible, as the function might not have a finite norm (i.e. $\int_{-\infty}^\infty |f(t)| dt$ could be divergent). However, it's very much possible that for the same function, $\int f(t)e^{-st}dt$ could still be finite. 
+	
+	The Laplace transform, is an integral transform that exploits simply this. 
+
+	
+	\begin{defn}
+		The {\it Laplace transform} of a function $f(t)$ over a transform variable $s \in \mathbb{C}$ is defined as \[ F(s) = \mathcal{L}(f; s) := \int_0^\infty f(t) e^{-st} dt\] 
+	\end{defn}
+	Note that this is a single-sided Laplace transform where the integral runs from $0$ to $\infty$. However, a two-sided Laplace transform can also be defined.
+	
+	Because $e^{-st}$ is a rapidly declining function of $t$, for a $f(t)$ that is a polynomial function in $t$, the product $f(t)e^{-st}$ will have a finite integral over $[0, \infty)$. In fact, even if $f$ is exponential type, that is $f(t) = e^{at}$, one can still find a Laplace tranform given that $Re(s) > a$.\\
+	
+	Therefore, it's possible to find the Laplace transform of a function in cases when a Fourier transform is not possible.
+	
+	\subsection*{Applications}
+	It may be asked why these transforms are useful. The utility of these transforms is that $\mathcal{L}$ is a {\it linear} transformation and it's possible to find an inverse Laplace transform later on.
+	
+	A very interesting utility is in solving differential equations. The Laplace transform of a derivative of $f(t)$ turns out to become a polynomial in $s$.  
+	
+	\subsection*{LCR Circuits}
+	The differential equation governing the current in an LCR circuit is
+	
+	\[L\frac{d^2q}{dt^2} + R\frac{dq}{dt} + \frac{q}{C}= V(t)\]
+	
+	For a moment let's write $\mathcal{L} (q;s) = Q(s)$. Using the fact that \[\mathcal{L}\left( \frac{d^nf}{dt^n} \right) = -s^nF(s) + \sum_{k=1}^n s^{n-k}f^{k-1 }(0)\]
+	
+	We can write \[\mathcal{L} \left( \frac{d^2 q}{dt^2}\right) = -s^2 Q(s) + sq(0) + \frac{dq}{dt}(0)	\]
+	
+	and \[ \mathcal{L} (\frac{dq}{dt}) = -sQ(s) +  q(0)\]
+	Using these two, for the {\it free oscillation} case ($V=0$) the differential equation becomes
+	
+	\[ -s^2Q(s) + sq(0) + \frac{dq}{dt}(0) - sQ(s) + q(0) = 0\]
+	
+	rearranging, we have
+	 \[ \frac{dq}{dt}(0) + (s + 1)q(0)  - s(s+1)Q(s) = 0\]
+	 
+	 After which we require initial conditions \textemdash namely the initial current (e.g. $I(0) = 0$) and charge. Say, for instance, if $I(0) = dq/dt(0) = 0$,
+	 
+	 \[Q(s) = \frac{s+1}{s(s+1)}q(0)\]
+	 
+	 And then we can take the inverse Laplace transform of $Q(s)$ to recover $q(t)$.
+\end{document}

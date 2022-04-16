@@ -1,0 +1,54 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{physics}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{top=0cm, margin=1.5cm}
+\begin{document}
+	\author{Aayush Arya}
+	\title{Determining the wavelength of H-$\alpha$ emission}
+	\maketitle
+	
+	\hrule
+	\begin{center}
+		PHY259 Lab Report\\
+		Registration Number: 11912610 \quad Section: G2903
+	\end{center}
+	\hrule
+	
+	\section*{Measurements \& Calculations}
+	
+	A mercury lamp was used as the light source. The number of grating lines $N$ per unit length is taken to be $600$ mm$^{-1}$. The true wavelength of H-$\alpha$ known to us is $656.281$ nm.
+	
+	
+	The angular measurements were the following.
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|c||c|c|c|c|c|}
+			\hline
+			Position & V1 & & V2 & & Difference \\
+			\hline
+			& Main Scale & Vernier Scale & Main Scale & Circular Scale & \\
+			\hline
+			Left & 336 & 18 & 156& 18 & 180 \\
+			Right & 23 & 14 & 203 & 14 & 180 \\
+			\hline
+		\end{tabular}
+		\caption{Position of H-$\alpha$ for the left and right first orders of diffraction. The main scale readings are in degrees, and each vernier scale division is equivalent to 2'.}
+	\end{table}
+	
+	The difference between the left and the right is of $2\theta = 46^o52'$. This gives the angular position of H-$\alpha$ in the first order from the center to be $\theta = 23^o26'$.
+	
+	The grating equation is $$ d\sin \theta = m\lambda$$
+	Since $d = 1/N$ where $N$ is line density, in SI units $N=6\times10^5$ per metres gives $d = 1.67 \times 10^{-6}$ For first order, $m=1$
+	
+	$$ (1.67 \times 10^{-6})\times \sin (23^o26')= \lambda$$
+	$$ \implies \lambda = 6628.02 \text{\AA}$$
+	\section*{Results}
+	The measured wavelength of H-$\alpha$ is $6628.02$\AA, which is $45.21$\AA off the true value of $6562.81$\AA, giving a percentage deviation of $0.69\%$ 
+	
+\end{document}

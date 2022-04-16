@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+\urlstyle{same}
+\begin{document}
+	
+	\author{Aayush Arya}
+	\date{(Submitted: \today)}
+	\title{}
+	
+	\maketitle
+	
+	\hrule
+	\begin{center}
+		PHY382 Lab Report\\
+		Practical: 4 \quad Registration No.: 11912610 \quad Section: G2903
+	\end{center}
+	\hrule
+	
+	\tableofcontents
+	
+	\section{Differential Equations in Physics}
+	\subsection{The need for a solution}
+	Equations that involve a particular variable $y$ and its derivatives appear so frequently in physics that understanding how to solve these equations becomes an important part of the toolkit of any physicist. From the simplest equations of motion $$m\ddot{x} = -kx$$ to the more sophisticated partial differential equations that appear in field theory, we need to find solutions to differential equations.
+	
+	However, sometimes it's not at all possible to find closed form solutions of a given differential equation and even $m\ddot{x} = -k(x+x^2)$ is relatively non-trivial to solve. One then has to resort to a numerical technique of some sort to find meaningful approximations to understand the physical system under investigation. Numerical computing languages such as \textsc{Matlab} and SciLab offer ways to solve differential equations.\\
+
+	Here, we discuss some broad categories of differential equations and where they show up in physics.
+	
+	\subsection{Ordinary Differential Equations}
+	
+	\subsubsection{Constant coefficients}
+	There's no single technique for solving even ordinary differential equations. Consider $$ y'' +y = 0 $$
+	which is a second-order, homogeneous ODE with constant coefficients and has a straightforward solution strategy. However, even if we introduce a simple extra term on the right hand side, e.g. $$ \ddot{x} + \omega^2 x = a_0 \cos\omega t$$ the homogeneous part alone isn't sufficient and a complete solution of the equation requires finding a `particular integral'.
+	
+	
+	Equations of the form such as above arise frequently in harmonic oscillator problems.
+	
+	\subsubsection{The need for a series expansion solution}
+	The solution of an arbitrary differential equation may not be expressable in a closed form in terms of elementary functions such as $\sin x$, or $\exp x$.
+	
+	One classic example of this is the Legendre differential equation. While solving for the Schr$\ddot{\rm{o}}$dinger equation in cases of spherical symmetry, sometimes upon separation of variables we get one equation of the form
+	
+	$$ ((1-x^2)P_{l}'(x))' + \left[ l(l+1) - \frac{m^2}{1-x^2}P_l(x) \right] = 0$$
+	
+	This becomes sophisticated to solve for an arbitrary $m\in\mathbb{N}$. One resort is then to try to find a $$ y_1 = \sum_{n=0}^{\infty}a_n x^n$$ with a set of coefficients that make the series converge, at least in a specified interval of interest $[a,b]$.
+	
+	\subsection{Partial Differential Equations}
+	\subsubsection{The Continuity Equation}
+	Charge conservation in electromagnetism is expressed as
+	$$ \frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot \vec{J} = 0$$
+	which says that any current density $J$ flowing out of a region of space is accompanied with the net transport of charge density $\rho$ over time. This is a first order, partial differential equation.
+	
+		\subsubsection{Transport phenomena and the diffusion equation}
+		A partial differential equation of higher order
+		$$ \frac{\partial \rho}{\partial t} = D \nabla^2 \rho$$
+		appears frequently in phenomena involving transport. This could be the transport of species of molecules in a fluid or, in a biophysical system, a bacterium whose motion can be modelled as a random walk \textemdash since diffusion is the continuum limit of a random walk.
+	
+	\subsubsection{Quantum mechanics and the Schrodinger equation}
+	
+	Perhaps it sounds like a fairly simple statement to say that the Hamiltonian of a system can be obtained as the eigenvalue of an operator $\hat{H}$ acted on a state $\psi$, i.e. $$ \hat{H}\psi = E\psi$$ where $E$ is the total energy of the system. But given that $\hat{E} = i\hbar \frac{\partial}{\partial t}$ and $ \hat{H} = \frac{\hat{p}^2}{2m} + V(x)$, one immediately finds that $$ -\frac{\hbar^2}{2m}\nabla^2\psi + V(x)\psi = i\hbar\frac{\partial \psi}{\partial t}$$
+	
+	is a partial differential equation at the heart of quantum mechanics that is second order in space and first order in time.
+	
+	\section{Conclusions}
+	It's evident that given such a plethora of techniques needed for solving a small subset of the infinite possible forms a differential equation can take, one must at some point need to resort to a computer for help. In the present day, scientists rely heavily on tools such as Mathematica to visualize and solve differential equations.
+\end{document}

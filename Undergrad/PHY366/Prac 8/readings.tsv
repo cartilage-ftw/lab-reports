@@ -1,0 +1,6 @@
+# f_s The values should be subtracted from V = 5
+V_max	V_min	f_c (kHz)	A_c (V)
+5.6681	5.0745	10	10
+5.6821	5.1152	10	15
+6.7676	5.9980	100	10
+7.6944	6.7005	100	15
